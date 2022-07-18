@@ -1,11 +1,13 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export const AuthProvider = () => {
+const AuthContext = React.createContext()
+
+export const AuthProvider = ({children}) => {
   return (
-    <View>
-      <Text>useAuth</Text>
-    </View>
-  )
-}
+  <AuthContext.Provider value={null}>
+    {children}
+  </AuthContext.Provider>
+  );
+};
 
